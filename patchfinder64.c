@@ -235,7 +235,7 @@ step64_back(const uint8_t *buf, addr_t start, size_t length, uint32_t what, uint
     return 0;
 }
 
-step_adrp_to_reg(const uint8_t *buf, addr_t start, size_t length, int reg)
+int step_adrp_to_reg(const uint8_t *buf, addr_t start, size_t length, int reg)
 {
     return step64(buf, start, length, 0x90000000 | (reg&0x1F), 0x9F00001F);
 }
